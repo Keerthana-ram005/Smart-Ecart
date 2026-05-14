@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart-eCart Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart-eCart Analyzer</h1>
+            <p>Analyze cooking videos to extract ingredients and instructions.</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <input type="url" id="youtube-url" placeholder="Enter YouTube URL here..." required>
+                <button id="analyze-btn">Analyze</button>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing video... This might take a moment.</p>
+            </div>
+
+            <div id="results" class="hidden">
+                <div class="results-grid">
+                    <section class="result-card ingredients-card">
+                        <h2>Ingredients</h2>
+                        <ul id="ingredient-list"></ul>
+                    </section>
+                    
+                    <section class="result-card summary-card">
+                        <h2>Summary</h2>
+                        <p id="summary-text"></p>
+                        
+                        <details style="margin-top: 15px; cursor: pointer;">
+                            <summary style="font-size: 0.9em; color: #666; font-weight: 500;">View Raw Audio Transcript</summary>
+                            <p id="transcript-text" style="margin-top: 10px; font-size: 0.85em; color: #555; background: #f8f9fa; padding: 10px; border-radius: 6px;"></p>
+                        </details>
+                        
+                        <div class="meta-info">
+                            <span class="badge">Language: <strong id="lang-detected"></strong></span>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
